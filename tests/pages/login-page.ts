@@ -12,6 +12,10 @@ export class LoginPage {
   readonly userNameError: Locator
   readonly authorizationError: Locator
   readonly ErrorCloseButton: Locator
+  readonly usernameInput: Locator
+  readonly phoneInput: Locator
+  readonly commentInput: Locator
+  readonly createOrderButton: Locator
 
   constructor(page: Page) {
     this.page = page
@@ -22,6 +26,10 @@ export class LoginPage {
     this.userNameError = page.getByTestId('username-input-error').first()
     this.authorizationError = page.getByTestId('authorizationError-popup')
     this.ErrorCloseButton = page.getByTestId('authorizationError-popup-close-button')
+    this.usernameInput = page.getByTestId('username-input')
+    this.phoneInput = page.getByTestId('phone-input')
+    this.commentInput = page.getByTestId('comment-input')
+    this.createOrderButton = page.getByTestId('createOrder-button')
   }
 
   async open() {
@@ -31,5 +39,11 @@ export class LoginPage {
   async signIn() {
     // actions
     return new OrderPage(this.page)
+    
+  }
+  async createOrder() {
+    await this.usernameInput.fill('random-client-name')
+    await this.phoneInput.fill('1232455678')
+    await this.createOrderButton.click()
   }
 }

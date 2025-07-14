@@ -7,5 +7,6 @@ export class OrderPage {
   constructor(page: Page) {
     this.page = page
     this.statusButton = page.getByTestId('openStatusPopup-button')
+
   }
 }

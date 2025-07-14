@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test'
 import { BACKEND_URL, PASSWORD, SERVICE_URL, USERNAME } from '../../../config/env-data'
 import { faker } from '@faker-js/faker/locale/ar'
+import { LoginPage } from '../../pages/login-page'
 
 const loginPath = 'login/student'
 let jwt: string = ''
@@ -31,3 +32,10 @@ test('create order and check success message', async ({ context }) => {
   await page.getByTestId('createOrder-button').click()
   await expect(page.getByTestId('orderSuccessfullyCreated-popup-ok-button')).toBeVisible()
 })
+
+test.only('check', async ({ context }) => {
+  const page = await context.newPage()
+  const orderPage = new LoginPage(page)
+  await orderPage.open()
+  await orderPage.createOrder()
+}) 
