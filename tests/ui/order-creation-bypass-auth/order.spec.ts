@@ -38,4 +38,4 @@ test.only('check', async ({ context }) => {
   const orderPage = new LoginPage(page)
   await orderPage.open()
   await orderPage.createOrder()
-}) 
+})

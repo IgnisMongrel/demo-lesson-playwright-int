@@ -39,7 +39,6 @@ export class LoginPage {
   async signIn() {
     // actions
     return new OrderPage(this.page)
-    
   }
   async createOrder() {
     await this.usernameInput.fill('random-client-name')
