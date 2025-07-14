@@ -12,7 +12,7 @@ test('Sign in button is disabled when an invalid username is entered', async ({ 
   await expect(authPage.userNameError).toBeVisible()
 })
 
-test.only('Sign in button is disabled when an invalid username and psw is entered', async ({
+test('Sign in button is disabled when an invalid username and psw is entered', async ({
   page,
 }) => {
   const authPage = new LoginPage(page)
