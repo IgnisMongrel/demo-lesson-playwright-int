@@ -11,7 +11,7 @@ export class LoginPage {
   // readonly userPasswordError: Locator
   readonly userNameError: Locator
   readonly authorizationError: Locator
-  readonly ErrorCloseButton : Locator
+  readonly ErrorCloseButton: Locator
 
   constructor(page: Page) {
     this.page = page
@@ -33,7 +33,3 @@ export class LoginPage {
     return new OrderPage(this.page)
   }
 }
-
-
-
-
